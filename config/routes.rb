@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'home/about' => 'homes#about'
   
+  get "user/followings_index" => "users#followings_index"
+  get "user/followers_index" => "users#followers_index"
+  
+  
   resources :users,only: [:index,:show,:edit,:update] do
     resource :relationships,only: [:create,:destroy]
     get :follows, on: :member

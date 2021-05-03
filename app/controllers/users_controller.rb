@@ -29,8 +29,12 @@ class UsersController < ApplicationController
   end
 
 
-  def test
-
+  def followings_index
+    @users = User.all
+  end
+  
+  def followers_index
+    @users = User.all
   end
 
 
