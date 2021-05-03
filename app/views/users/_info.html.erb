@@ -8,6 +8,31 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <tr>
+    <th>
+      <div class="following">
+        <p>フォロー数：<%= user.followings.count %></p>
+      </div>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <div class="follower">
+        <p>フォロワー数：<%= user.followers.count %></p>
+      </div>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <% if current_user != user %>
+        <% if user.followed_by?(current_user) %>
+        <p><%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete %></p>
+      <% else %>
+        <p><%=link_to "フォローする", user_relationships_path(user.id), method: :post %></p>
+        <% end %>
+      <% end %>
+    </th>
+  </tr>
 </table>
 
 <div class='row'>
