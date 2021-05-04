@@ -2,7 +2,7 @@
 
   <% if @range == "User" %>
 
-    <h1>Users search for "〇〇"</h1>
+    <h1>Users search for "<%= @word_ %>"</h1>
     <thead>
       <tr>
         <th colspan="1"></th>
@@ -43,7 +43,7 @@
 
   <% else %>
 
-    <h1>Books search for "〇〇"</h1>
+    <h1>Books search for "<%= @word_book %>"</h1>
     <thead>
       <tr>
         <th colspan="1"></th>
