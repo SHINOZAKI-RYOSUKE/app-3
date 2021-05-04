@@ -9,7 +9,7 @@ class Book < ApplicationRecord
     
     
     
-    # 検索方法分岐
+   
   def self.looks(search, word)
     if search == "perfect_match"
       @book = Book.where("title LIKE?","#{word}")

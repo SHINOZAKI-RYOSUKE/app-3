@@ -19,6 +19,6 @@ Rails.application.routes.draw do
     resources :book_comments,only: [:create,:destroy]
   end
   
-  get "search" => "searches#search"
+  get "search" => "searches#search_result", as: "search_result"
   
 end
