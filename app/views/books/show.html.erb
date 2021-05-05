@@ -25,7 +25,9 @@
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
           
-          <%= render 'favorites/favorites',book: @book %>
+          <div id="favorite_buttons_<%= @book.id %>">
+            <%= render 'favorites/favorite',book: @book %>
+          <div>
           
           <td>
             <div class="comments">
