@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from:     "shino事務局"
+  default from:     "musuka"
   layout 'mailer'
 end

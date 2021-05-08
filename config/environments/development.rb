@@ -67,8 +67,8 @@ Rails.application.configure do
     :port => 587,
     :domain => 'gmail.com',
     # 以下のuser_name, passwordはご自身のものに変更して下さい。
-    :user_name => "gibson335m@gmail.com",
-    :password => "oxnmcotyesavkwsa",
+    user_name:            ENV['WELCOME_MAILER_ADDRESS'],
+    password:             ENV['WELCOME_MAILER_PASSWORD'],
     :authentication => :plain,
     :enable_starttls_auto => true
   }
