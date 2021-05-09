@@ -27,7 +27,9 @@
   
 </table>
 
-  
+      <% if current_user != user %>
+        <%= link_to 'チャットする', chat_path(user.id) %>
+      <% end %>
       
       <% if current_user != user %>
         <% if user.followed_by?(current_user) %>
