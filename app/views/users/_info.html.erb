@@ -27,17 +27,28 @@
   
 </table>
 
-      <% if current_user != user %>
-        <%= link_to 'チャットする', chat_path(user.id) %>
-      <% end %>
-      
-      <% if current_user != user %>
+<table class='table'>
+  <tbody>
+    <% if current_user != user %>
+    <tr>
+      <th>
+        <%= link_to 'Direct Messenge', chat_path(user.id), class: "btn btn-success btn-block" %>
+      </th>
+    </tr>
+    <% end %>
+    <tr>
+      <td>
+        <% if current_user != user %>
         <% if user.followed_by?(current_user) %>
-        <%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete, class: "btn btn-success" %>
+        <%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete, class: "btn btn-success btn-block" %>
         <% else %>
-        <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-info" %>
+        <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-info btn-block" %>
         <% end %>
       <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
     
     
 
