@@ -25,15 +25,11 @@
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
 
-          <td class="favorite_buttons_<%= @book.id %>"><%#なぜidがいる？%>
+          <td class="favorite_buttons_<%= @book.id %>"><%#部分的に指定しているから%>
             <%= render 'favorites/favorite',book: @book %>
           </td>
 
-          <td>
-            <div class="comments-index">
-              <p>コメント件数：<%= @book.book_comments.count %></p>
-            </div>
-          </td>
+          <td class="comment-count">コメント件数：<%= @book.book_comments.count %></td>
 
           <% if current_user.id == @book.user_id %>
           <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
@@ -52,7 +48,7 @@
 
       <div class="comment-form">
         <%= form_with(model:[@book, @book_comment], remote: true) do |f| %>
-          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", class:"textarea1" %>
           <%= f.submit "送信する" %>
         <% end %>
       </div>

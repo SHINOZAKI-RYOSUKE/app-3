@@ -1,3 +1,4 @@
-$(".comment-index").html("<%= j(render partial: 'book_comments/b_comments', locals: {book: @book}) %>")
-$("textarea").val('')
+$(".comment-count").html("コメント数: <%= @book.book_comments.count %>");
+$(".comment-index").html("<%= j(render partial: 'book_comments/b_comments', locals: {book: @book}) %>");
+$(".textarea1").val('');
 <%#$("textarea").val('')でコメント送信後のコメント入力フォームを空にしてる！%>
