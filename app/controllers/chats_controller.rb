@@ -19,6 +19,7 @@ class ChatsController < ApplicationController
       @room = user_rooms.room
     end
     #if文の中で定義した@roomに紐づくchatsテーブルのレコードを代入
+    #!!!!!!『if　の外に持ってきているから『＠』』が必要だった！ !!!!!!!
     @chats = @room.chats
     @chat = Chat.new(room_id: @room.id)
   end
