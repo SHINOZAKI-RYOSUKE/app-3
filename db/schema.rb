@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_05_09_070307) do
 
+
   create_table "book_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
